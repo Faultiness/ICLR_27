@@ -1,4 +1,4 @@
-"""Unit effects, comparison completion, and R0."""
+"""SHIR unit effects, comparison completion, and the R0 score update."""
 
 from __future__ import annotations
 

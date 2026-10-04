@@ -1,4 +1,4 @@
-"""Proposal generation and grounding for SHIR."""
+"""SHIR proposal generation, grounding, and request auditing."""
 
 from __future__ import annotations
 
@@ -104,7 +104,7 @@ class LLMConfig:
             "retry_backoff_seconds": self.retry_backoff_seconds,
             "proposal_vendor_parameters": deepcopy(dict(self.proposal_vendor_parameters)),
             "grounding_vendor_parameters": deepcopy(dict(self.grounding_vendor_parameters)),
-            "settings_scope": "submitted requests; effective provider decoding is not asserted",
+            "settings_scope": "submitted chat-completions request configuration",
         }
 
 

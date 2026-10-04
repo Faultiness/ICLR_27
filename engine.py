@@ -366,7 +366,7 @@ class SHIREngine:
             for summary in reference.unit_summaries:
                 item = asdict(summary)
                 item["evidence_id"] = f"reference-unit:{summary.unit_id}"
-                # Unsupported defaults are not observed effects.
+                # Mark whether the reference summary has execution support.
                 item["observed"] = summary.group_count > 0
                 summaries.append(item)
                 if summary.group_count > 0:

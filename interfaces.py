@@ -1,4 +1,4 @@
-"""Predictor, adapter, and proposal interfaces."""
+"""Predictor, dataset-adapter, and proposal-backend interfaces for SHIR."""
 
 from __future__ import annotations
 

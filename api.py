@@ -1,4 +1,4 @@
-"""Construct SHIR for VitalDB or WeatherBench2."""
+"""SHIR engine construction for the VitalDB and WeatherBench2 tasks."""
 
 from dataclasses import replace
 

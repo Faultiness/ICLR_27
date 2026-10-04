@@ -1,4 +1,4 @@
-"""Reconstruct reference summaries from stored execution records."""
+"""SHIR reference reconstruction and validation from stored execution records."""
 
 from __future__ import annotations
 

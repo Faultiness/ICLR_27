@@ -1,4 +1,4 @@
-"""WeatherBench2 interventions in physical units and frozen per-channel standardization.
+"""SHIR WeatherBench2 interventions in physical units and frozen per-channel standardization.
 
 Seasonal references use a cyclic 366-day month/day calendar.
 """
@@ -637,7 +637,7 @@ class WeatherAdapter:
             "adapter_contract": "weather-prepared-physical-v2", "climatology": climatology.fingerprint,
             "channels": CHANNELS, "latitudes": LATITUDES, "longitudes": LONGITUDES,
             "channel_metadata": [asdict(channel) for channel in WEATHER_CHANNELS],
-            "attributes": "handoff-cos-lat-climatology-anomaly-and-adjacent-rms-v1",
+            "attributes": "cos-lat-climatology-anomaly-and-adjacent-rms-v1",
             "normalization": "training-per-channel-population-binary32-v1",
         })
 

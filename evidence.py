@@ -1,4 +1,4 @@
-"""Input-scoped evidence: shared records contribute once to aggregation."""
+"""SHIR input-scoped evidence: shared records contribute once to aggregation."""
 
 from __future__ import annotations
 

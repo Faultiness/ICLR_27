@@ -1,4 +1,4 @@
-"""Input cards from train-only float32 attribute distributions."""
+"""SHIR input cards from training-only float32 attribute distributions."""
 
 from __future__ import annotations
 
@@ -179,7 +179,9 @@ class InputCardReference:
     def from_dict(cls, data: Mapping[str, Any]) -> InputCardReference:
         if (not isinstance(data, Mapping) or data.get("schema_version") != ASSET_SCHEMA
                 or data.get("source_split") != "train"):
-            raise ValueError("Expected a training input-card reference v2; older midpoint-percentile assets are incompatible")
+            raise ValueError(
+                f"Input-card reference requires schema_version={ASSET_SCHEMA!r} and source_split='train'"
+            )
         if (data.get("training_policy") != TRAINING_POLICY or data.get("storage_dtype") != STORAGE_DTYPE
                 or data.get("percentile_policy") != PERCENTILE_POLICY or data.get("percentile_range") != [0, 1]):
             raise ValueError("Input-card reference policies do not match the v2 observation contract")

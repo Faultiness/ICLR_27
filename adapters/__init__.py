@@ -1,1 +1,1 @@
-"""Task adapters for WeatherBench2 and VitalDB."""
+"""Dataset adapters for the SHIR VitalDB and WeatherBench2 tasks."""

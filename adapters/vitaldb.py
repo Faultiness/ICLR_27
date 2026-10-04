@@ -1,4 +1,4 @@
-"""VitalDB interventions on 42x20 physical histories with observed and quality masks.
+"""SHIR VitalDB interventions on 42x20 physical histories with observed and quality masks.
 
 Twelve prehistory bins support derived features; models use the final 30 bins.
 """
@@ -313,7 +313,7 @@ class VitalTrainingReference:
     @classmethod
     def from_dict(cls, source: Mapping[str, Any]) -> VitalTrainingReference:
         if not isinstance(source, Mapping) or source.get("schema_version") != "vitaldb-training-reference-v2":
-            raise ValueError("VitalDB training reference must use v2; single-mask/v1 assets are unsupported")
+            raise ValueError("VitalDB training reference requires schema_version='vitaldb-training-reference-v2'")
         names = source.get("factor_names")
         if not isinstance(names, (list, tuple)) or tuple(names) != FACTOR_NAMES:
             raise ValueError("Training factor order does not match the adapter")
@@ -339,8 +339,9 @@ class VitalTrainingReference:
 
 
 class VitalDBAdapter:
+    """Implement the SHIR VitalDB intervention and input-observation protocol."""
 
-    method_label = "prepared VitalDB v2 adapter; new execution, paper results not reproduced"
+    method_label = "SHIR VitalDB v2 adapter"
     unit_ids = UNIT_IDS
 
     def __init__(self, training_reference: VitalTrainingReference) -> None:

@@ -1,4 +1,4 @@
-"""Output scales from unperturbed validation predictions."""
+"""SHIR output-scale calibration from unperturbed validation predictions."""
 
 from __future__ import annotations
 
