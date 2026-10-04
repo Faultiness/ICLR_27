@@ -1,0 +1,13 @@
+The previous response failed the comparison-card format or envelope contract.
+
+VALIDATION ERRORS:
+{validation_errors}
+
+PREVIOUS RESPONSE:
+{previous_response}
+
+Return up to three complete corrected COMPARISON cards.
+Correct only the reported formatting, missing-field or envelope violations.
+Preserve the substantive endpoint choices, expected orders and rationales
+whenever they are present. Do not introduce a new exploration strategy.
+Return the corrected cards only.

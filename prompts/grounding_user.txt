@@ -1,0 +1,85 @@
+# FROZEN TASK
+
+Dataset:
+{dataset_description}
+
+Prediction target:
+{target_description}
+
+Target components:
+{target_components}
+
+Fixed primary operation:
+{primary_operator_description}
+
+Effect being compared:
+a_x(u) = max_c |(f_c(T_u(x)) - f_c(x)) / s_c|
+
+# RAW COMPARISON CARDS
+
+{raw_comparison_cards_with_card_ids}
+
+# ALLOWED UNIT CATALOG
+
+{unit_catalog}
+
+# ALLOWED EVIDENCE REFERENCES
+
+{allowed_evidence_ids}
+
+# MAPPING CONTRACT
+
+1. Return exactly one item for each supplied card, in the supplied order.
+   There are at most three cards.
+
+2. Copy card_id exactly. Do not generate a new Card ID.
+
+3. For a grounded item:
+   - units must contain exactly two different allowed Unit IDs;
+   - units[0] corresponds to Unit A in the original card;
+   - units[1] corresponds to Unit B in the original card;
+   - expected must be one of:
+       first_gt_second
+       second_gt_first
+       tie
+   - evidence_refs may contain only supplied evidence IDs;
+   - rationale must faithfully preserve the original brief rationale.
+
+4. Map A_GT_B to first_gt_second.
+   Map B_GT_A to second_gt_first.
+   Map TIE to tie.
+   These describe absolute-effect ordering, not positive or negative effects
+   on the prediction.
+
+5. Do not replace an unsupported endpoint with a merely similar Unit.
+   If the endpoints or expected comparison cannot be faithfully mapped,
+   return status "untranslatable", units [], expected null and evidence_refs [].
+   Preserve the original rationale.
+
+6. If multiple cards map to the same unordered pair, retain the first faithfully
+   grounded card and mark the later duplicates untranslatable. Different wording
+   or reversed endpoint order does not create a new comparison.
+
+7. If no cards were supplied, return {"comparisons": []}.
+
+# OUTPUT FORMAT
+
+Return one JSON object:
+
+{
+  "comparisons": [
+    {
+      "card_id": "<supplied Card ID>",
+      "status": "grounded",
+      "units": ["<Unit A ID>", "<Unit B ID>"],
+      "expected": "first_gt_second",
+      "rationale": "<faithful echo of the original brief rationale>",
+      "evidence_refs": ["<supplied evidence ID>"]
+    }
+  ]
+}
+
+Allowed status values: grounded, untranslatable.
+Allowed expected values for grounded items:
+first_gt_second, second_gt_first, tie.
+For untranslatable items, expected must be null.

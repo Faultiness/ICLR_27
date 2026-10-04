@@ -1,0 +1,14 @@
+This is an independently initialized reference-input episode.
+
+Use only the supplied instance information and evidence collected earlier
+on THIS input. Do not use the completed global graph or evidence collected
+from other reference-input episodes.
+
+Training-data preprocessing, fixed intervention references and instance
+statistics are available; cross-input model-behavior history is not.
+
+There is no complete historical reference ranking in this cold-start episode.
+Unobserved Units remain unknown. Do not invent a complete ranking or
+budget-boundary positions.
+
+Later rounds may use the responses obtained in earlier rounds of this episode.

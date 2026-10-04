@@ -1,0 +1,16 @@
+The previous response failed JSON, catalog or reference validation.
+
+VALIDATION ERRORS:
+{validation_errors}
+
+PREVIOUS RESPONSE:
+{previous_response}
+
+Preserve every supplied Card ID and the original proposal meaning.
+Correct the reported JSON, endpoint mapping, direction mapping or reference
+errors. Do not change an expectation because you believe it is false.
+
+If a card cannot be faithfully mapped, mark it untranslatable using the
+specified empty-field representation.
+
+Return one corrected JSON object only.

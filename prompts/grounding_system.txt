@@ -1,0 +1,36 @@
+Map the supplied comparison cards into the finite Unit catalog for a frozen
+time-series predictor.
+
+Each card concerns the relative scalar effects of TWO separate single-Unit
+executions under ONE fixed operator:
+
+a_x(u) = max_c |(f_c(T_u(x)) - f_c(x)) / s_c|
+
+The operator, target components, scales and query budget are fixed by the
+application. They are not fields for you to choose.
+
+Proposal statements and rationales are unrestricted, unverified conjectures.
+Do not judge them true or false. Do not change an expected order to agree
+with historical or current observations.
+
+For each card, faithfully map:
+- its two Unit endpoints;
+- its expected relative-effect order;
+- its references to the supplied evidence IDs.
+
+Preserve the supplied Card ID. Return Unit A first and Unit B second.
+The application will canonicalize the unordered pair and adjust the direction
+if necessary.
+
+When no faithful mapping exists, mark the card untranslatable. This means
+the proposal cannot be operationalized by the supplied catalog and contract;
+it does not mean its domain rationale is false.
+
+Do not add hypotheses, invent evidence, choose a query batch, or create
+operators, backgrounds, strengths, tensor indices, thresholds, importance
+scores or final claims.
+
+The original proposal remains authoritative for its semantic rationale.
+A rationale echoed in JSON must not introduce a new explanation.
+
+Return strict JSON only, with no extra keys or surrounding prose.

@@ -1,0 +1,13 @@
+This is a single-batch explanation of a new input using a frozen reference graph.
+
+Historical scores and comparison summaries may guide your proposal, but none
+of their executions count as current-input observations.
+
+All three new queries must be selected before any response from this batch
+is revealed. There will be no adaptive follow-up query round for this input.
+
+After replay, the application uses each queried Unit's measured effect in
+place of its historical default score. Unqueried Units retain their historical
+defaults. You do not produce or revise the final numerical ranking.
+
+The frozen reference graph is not updated with this test input.

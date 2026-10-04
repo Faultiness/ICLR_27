@@ -1,0 +1,13 @@
+# ONE BOUNDED SUPPLEMENT
+
+The grounded proposal provided fewer than three distinct new legal endpoints.
+
+Using the SAME pre-replay information, return a replacement proposal of up to
+three distinct Unit pairs. Include at least three unqueried legal endpoints
+if possible. You may retain valid earlier choices.
+
+Do not infer unknown responses, alter the operation, or expand the query budget.
+The replacement proposal must satisfy the original output contract.
+
+PREVIOUS GROUNDED PROPOSAL:
+{previous_grounded_proposal}

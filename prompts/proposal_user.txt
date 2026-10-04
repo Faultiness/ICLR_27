@@ -1,0 +1,157 @@
+# DATASET AND CURRENT INSTANCE
+
+Dataset:
+{dataset_description}
+
+Current train-reference-relative instance information:
+{instance_card}
+
+# FROZEN PREDICTION TASK
+
+Prediction target:
+{target_description}
+
+Target components:
+{target_components}
+
+Current predictions in physical units:
+{prediction_by_component}
+
+Frozen output scales:
+{scale_by_component}
+
+# FIXED INTERVENTION AND UNIT CATALOG
+
+The only numerical operation available in this run is:
+{primary_operator_description}
+
+Its reference values, parameters and validity checks are determined by the
+dataset adapter. You must not modify them.
+
+Unit structure and coupling:
+{unit_scope_and_coupling_description}
+
+Available Unit IDs and descriptions:
+{unit_catalog}
+
+Use exact Unit IDs. Do not include display labels as part of an ID.
+A Unit may contain coupled channels or derived dependencies; do not split it
+into unsupported smaller interventions.
+
+# EXECUTION STAGE
+
+{stage_instruction}
+
+Current round: {round_number}
+Maximum rounds for this input: {maximum_rounds}
+New predictor-query budget for this round: 3
+Maximum number of proposed comparisons: 3
+
+# HISTORICAL REFERENCE — ADVISORY ONLY
+
+{historical_reference_context}
+
+When available, this section contains historical default scores, their
+reference ranking, endpoint support and genuinely matched historical
+comparisons.
+
+A difference between two historical default scores is not automatically a
+matched historical difference: the two endpoints may have been observed on
+different reference inputs.
+
+A default assigned to an unsupported Unit is not an observed response.
+Historical records never fill a missing current-input endpoint.
+
+# CURRENT-INPUT EXECUTION TABLE
+
+{current_execution_table}
+
+This table contains only successful, compatible executions on the current
+input. Each unique execution appears once, with its evidence ID, Unit ID,
+signed normalized component responses and scalar effect.
+
+Units absent from this table have not been measured on the current input.
+Do not request another predictor execution for an already observed endpoint.
+
+# REGISTERED COMPARISONS
+
+{registered_comparison_view}
+
+Each displayed comparison identifies:
+- its two endpoints and previously stated expectations;
+- compatible historical evidence, when available;
+- current endpoint observations;
+- which current endpoints are still missing;
+- its numerical result, if both current endpoints are available;
+- its relation to the declared explanation budgets, when a complete reference
+  ranking is available.
+
+A comparison that has not been explicitly organized may still be resolvable
+from existing endpoint records. Lack of an organized summary does not imply
+lack of observations. Such a comparison can be resolved without repeating
+predictor queries.
+
+# ALLOWED EVIDENCE REFERENCES
+
+{allowed_evidence_ids}
+
+Cite only IDs in this list.
+Use INSTANCE_CARD for a new exploratory comparison motivated by the supplied
+current-input information. Do not invent evidence IDs or observed values.
+
+# PROPOSAL TASK
+
+Propose up to three distinct unordered Unit pairs.
+
+For each pair:
+1. identify two different Units from the supplied catalog;
+2. state the expected order of their scalar effects under the fixed operation;
+3. explain briefly why this comparison is worth examining for the current input;
+4. cite the relevant supplied evidence.
+
+Prioritize unresolved comparisons that could affect a declared top-k prefix
+when a complete reference ranking is available. This is a priority, not a
+hard restriction: new directions and pairs currently on the same side of a
+budget boundary are allowed when motivated by the input or evidence.
+
+You may revisit a registered comparison that still lacks current evidence.
+If both endpoints were already observed, do not describe their known ordering
+as a new prediction or expect it to consume another predictor query.
+
+Where possible, provide at least three distinct unqueried endpoints across
+the proposed pairs. Shared endpoints are allowed when scientifically
+motivated. Do not manufacture a clique or force endpoint sharing merely to
+increase the number of completed comparisons.
+
+Do not select the final query batch. The application will choose at most
+three new Unit queries from the grounded endpoints.
+
+Do not infer that a larger single-Unit effect proves joint sufficiency,
+redundancy, interaction, or real-world causality.
+
+# OUTPUT CONTRACT
+
+Return up to three cards, numbered consecutively, using exactly these fields:
+
+## COMPARISON <n>
+Unit A:
+<exact Unit ID>
+Unit B:
+<exact Unit ID>
+Expected order:
+<A_GT_B | B_GT_A | TIE>
+Evidence references:
+<comma-separated allowed evidence IDs>
+Brief rationale:
+<brief unverified rationale tied to the current input and available evidence>
+
+A_GT_B means a_x(Unit A) > a_x(Unit B).
+B_GT_A means a_x(Unit B) > a_x(Unit A).
+TIE means the effects are expected to be equal under the application's fixed
+numerical comparison rule. Do not introduce your own tolerance.
+
+Do not submit the same unordered pair twice, even with reversed endpoint
+order or a different rationale.
+
+If no legal comparison can be proposed, return exactly:
+NO_VALID_COMPARISON

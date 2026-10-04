@@ -1,0 +1,45 @@
+{
+  "schema_version": "shir-paper-prompts-v1",
+  "templates": [
+    {
+      "file": "proposal_system.txt",
+      "sha256": "80246651ec03a975de0a72346bee32e1b795b8038ad79f20ee865e9a67d995eb"
+    },
+    {
+      "file": "proposal_user.txt",
+      "sha256": "526caebfdb08c8055a63086fb403c11f3b14c3870d9742e582bd820d2114f679"
+    },
+    {
+      "file": "reference_stage.txt",
+      "sha256": "5d2045c60210645b3ba530c59bf7af4a442d150b8f137ac35f51d9139934cb05"
+    },
+    {
+      "file": "explanation_stage.txt",
+      "sha256": "34582ab552c19b90f31dc6da215df028669efe053be30edc7d5605b7c2987d2e"
+    },
+    {
+      "file": "grounding_system.txt",
+      "sha256": "3ef40eb9bd2d24fa0faaa861b9f8ed2b6eef696e858c35a2af75f34d94f80bd1"
+    },
+    {
+      "file": "grounding_user.txt",
+      "sha256": "91be22253b937d61217c97aca361c0576058c29de93e44e4739b010994d8fdf6"
+    },
+    {
+      "file": "card_wrapper.txt",
+      "sha256": "fe441199a24be4f33edb3bf683a57cf260e300455893b24d455b5da34411ccd6"
+    },
+    {
+      "file": "proposal_repair.txt",
+      "sha256": "b8e86b90a99b8afc2b9336dfa0e7c4b2d8ee6afbc0c00d6c015fd9eadb2ae457"
+    },
+    {
+      "file": "grounding_repair.txt",
+      "sha256": "e11555f153be34f7f46b3be327de9f6c02c6df40de08965ae5e909baef840d37"
+    },
+    {
+      "file": "supplement.txt",
+      "sha256": "d4ab3d1669463777a86c35c018e5eb6aa51142cb139644e0d9e3a3acac66ef6c"
+    }
+  ]
+}
